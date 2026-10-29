@@ -344,7 +344,7 @@ This laboratory is intended strictly for education purposes only.
 **Abdullah Tariq**\
 Cybersecurity Professional B084
 
-LinkedIn: [](https://www.linkedin.com/in/abdullah-tariq-202301340485gb/)
+LinkedIn: [Abdullah Tariq](https://www.linkedin.com/in/abdullah-tariq-202301340485gb/)
 
 ---
 
