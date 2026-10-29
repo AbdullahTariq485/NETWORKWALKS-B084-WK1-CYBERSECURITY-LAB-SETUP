@@ -71,6 +71,19 @@ It can be used for activities such as:
 
 Additional target machines can be added to the same virtual network in future projects.
 
+### 🔑 Lab Network Topology & Target Mapping
+
+| 🖥️ Environment Host | 📂 Folder Path | 🌐 Network Mode | 📡 Assigned IP Address | 🎯 Lab Profile |
+| :--- | :--- | :--- | :--- | :--- |
+| **Kali Linux** | `1-KaliVM/` | NAT Network | `10.0.0.2` | Attacker System |
+| **Windows 7** | `4-Win7VM/` | NAT Network | `10.0.0.5` | Legacy Target |
+| **Windows 10** | `2-Win10VM/` | NAT Network | `10.0.0.3` | Client Target |
+| **Windows 11** | `3-Win11VM/` | NAT Network | `10.0.0.4` | Client Target |
+| **Android-x86** | `5-AndroidVM/` | NAT Network | `10.0.0.6` | Mobile Target |
+| **Default Gateway** | *Infrastructure* | NAT Network | `10.0.0.1` | Virtual Router |
+
+> ℹ️ **Note:** Every target machine is strictly anchored to the private subnet gateway (`10.0.0.1`) and routes outbound external traffic safely using public DNS (`8.8.8.8`) while remaining entirely isolated from your physical host machine network.
+
 ---
 
 ## ⚙️ Lab Configuration
@@ -97,7 +110,7 @@ Additional target machines can be added to the same virtual network in future pr
 
 ## Step 1. Install VirtualBox
 
-VirtualBox was installed as the hypervisor.
+VirtualBox was installed as the hypervisor. Remember to enable virtualization in your system's bios to make sure that no errors related to virtualization may occur.
 
 ---
 
@@ -180,7 +193,6 @@ If a future exercise changes or damages the VM configuration, the machine can be
 
 
 ---
----
 
 ## 📂 Target Machines
 
@@ -233,21 +245,22 @@ The network connection was then restarted/rebooted and connectivity was tested a
 
 ---
 
-## Problem 2. VirtualBox VT-x / Virtualization Error
+## Problem 2. Target Windows VMs Dropping Ping Requests (ICMP Blocked by Default)
 
-The VM initially failed to start because hardware virtualization was disabled in the system firmware/BIOS.
+During connectivity verification, the Kali Linux machine could not receive ping responses from the Windows target virtual machines (`10.0.0.3`, `10.0.0.4`, `10.0.0.5`), resulting in `100% packet loss`. 
 
-The issue was resolved by:
+### Cause
+By default, the built-in Windows Defender Firewall blocks all inbound Internet Control Message Protocol (ICMP) Echo Requests. This prevents the target machines from responding to scanning or reconnaissance attempts from the attacker platform, even though they are active on the same `NatNetwork`.
 
-1. Restarting the computer.
-2. Entering BIOS/UEFI settings.
-3. Enabling Intel VT-x / hardware virtualization.
-4. Saving the configuration.
-5. Restarting the computer.
-6. Starting the Kali VM again.
+### Solution
+The issue was resolved by enabling the predefined inbound firewall rule on each Windows guest OS to explicitly allow ICMPv4 traffic:
 
-After enabling virtualization, the VM started successfully.
+1. Open the **Run** dialog box (`Win + R`), type `wf.msc`, and press **Enter** to open *Windows Defender Firewall with Advanced Security*.
+2. Click on **Inbound Rules** in the left-hand pane.
+3. Scroll down to locate the predefined rule: **File and Printer Sharing (Echo Request - ICMPv4-In)**.
+4. Right-click the rule and select **Enable Rule** for the appropriate network profile (Private/Public).
 
+Once enabled, cross-VM communications succeeded immediately, yielding successful ICMP replies on the Kali Linux terminal.
 
 ---
 
@@ -293,7 +306,6 @@ This laboratory is intended strictly for education purposes only.
 
 # 🔗 Tools & Resources
 
-- **7-Zip:** [https://7-zip.org/download.html](https://7-zip.org/download.html)
 - **VirtualBox:** [https://virtualbox.org/wiki/Downloads](https://virtualbox.org/wiki/Downloads)
 - **Kali Linux:** [https://kali.org/get-kali](https://kali.org/get-kali)
 
