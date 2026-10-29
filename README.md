@@ -230,20 +230,25 @@ If a future exercise changes or damages the VM configuration, the machine can be
 ---
 
 
-# 🔎 Lab Verification
 
-| ✅ Test                        | 🧾 Command                      | 🎯 Expected Result              |
-| ----------------------------- | ------------------------------- | ------------------------------- |
-| 🌐 Check IP address           | `ip a`                          | Correct Kali IP displayed       |
-| 📡 Test gateway               | `ping 10.0.0.1`                 | Successful replies              |
-| 🖥️ Test Windows 11            | `ping 10.0.0.4`                 | Successful replies from Win11 VM|
-| 💻 Test Windows 10            | `ping 10.0.0.3`                 | Successful replies from Win10 VM|
-| 📜 Test Windows 7             | `ping 10.0.0.5`                 | Successful replies from Win7 VM |
-| 🤖 Test Android VM            | `ping 10.0.0.6`                 | Successful replies from Android |
+## 🔎 Lab Verification
 
-### 📡 Example
+Run the following commands from Kali Linux to verify addressing
+and connectivity. Actual results and screenshots are documented
+in the `6-Connectivity/` directory.
 
-![](6-Connectivity/Kali-To-Win10.png)
+| Test | Command | Expected Outcome |
+|---|---|---|
+| Check network interfaces | `ip a` | Intended IP address is assigned |
+| Test gateway | `ping -c 4 10.0.0.1` | Replies if the gateway responds to ICMP |
+| Test Windows 10 | `ping -c 4 10.0.0.3` | Replies if reachable and ICMP is allowed |
+| Test Windows 11 | `ping -c 4 10.0.0.4` | Replies if reachable and ICMP is allowed |
+| Test Windows 7 | `ping -c 4 10.0.0.5` | Replies if reachable and ICMP is allowed |
+| Test Android | `ping -c 4 10.0.0.6` | Replies if reachable and ICMP is allowed |
+
+![Kali to Windows 10 Connectivity Test](6-Connectivity/Kali-To-Win10.png)
+
+*Figure: Example cross-VM connectivity test.*
 
 
 ---
