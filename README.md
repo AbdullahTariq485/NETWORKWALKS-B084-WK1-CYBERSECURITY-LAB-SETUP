@@ -23,11 +23,10 @@
 
 ## 📌 Project Overview
 
-This project focuses on setting up a **virtual cybersecurity and penetration-testing laboratory** using VirtualBox and Kali Linux.
+This project focuses on setting up a **virtual cybersecurity and penetration-testing laboratory** using VirtualBox, Kali Linux and some other Operating Systems acting as targets.
 
 The purpose of the lab is to create a controlled environment where cybersecurity tools, network scanning, reconnaissance, vulnerability assessment, and other security-testing activities can be performed safely and repeatedly.
 
-The lab is configured on a private virtual network so that additional machines can be added later and used as targets for authorized security testing.
 
 ---
 
@@ -37,14 +36,13 @@ The lab is configured on a private virtual network so that additional machines c
 The main objectives of this project are to:
 
 - Install and configure VirtualBox.
-- Install/import Kali Linux as a virtual machine.
+- Install/import Kali Linux and other Operating Systems as virtual machines.
 - Create a private **NAT Network** for the cybersecurity lab.
-- Configure network connectivity for Kali Linux.
-- Assign a consistent IP address to the Kali VM.
-- Verify network connectivity and DNS resolution.
+- Configure network connectivity for these Operating Systems.
+- Assign a consistent IP address to each Operating System.
+- Verify network connectivity.
 - Take a clean VM snapshot for recovery.
 - Document the complete setup process.
-- Prepare the environment for future cybersecurity projects.
 
 ---
 
@@ -68,10 +66,10 @@ It can be used for activities such as:
 
 ## 🏗️ Lab Architecture
 
-![](1-screenshot-title-image.png)
+![](Vbox-Main.png)
 
 
-Additional target machines have been added to the same virtual network for future projects.
+Additional target machines can be added to the same virtual network in future projects.
 
 ---
 
@@ -90,7 +88,7 @@ Additional target machines have been added to the same virtual network for futur
 | 🐧 Kali IP Address | 10.0.0.2/24        |
 | 🚪 Default Gateway | 10.0.0.1           |
 | 🌍 DNS Server      | 8.8.8.8            |
-| 🔮 Future VM Range | 10.0.0.3–10.0.0.99 |
+| 🔮 Remaining VM Range        | 10.0.0.3–10.0.0.99 |
 
 ---
 
@@ -189,23 +187,15 @@ If a future exercise changes or damages the VM configuration, the machine can be
 | ----------------------------- | ------------------------------- | ------------------------------- |
 | 🌐 Check IP address           | `ip a`                          | Correct Kali IP displayed       |
 | 📡 Test gateway               | `ping 10.0.0.1`                 | Successful replies              |
-| 🌍 Test Internet connectivity | `ping 8.8.8.8`                  | Successful replies              |
-| 🔎 Test DNS resolution        | `nslookup networkwalks.com`     | Domain resolves                 |
-| 🧰 Verify Nmap                | `nmap --version`                | Nmap version displayed          |
-| 🔄 Verify snapshot            | Restore snapshot and run `ip a` | Baseline configuration restored |
+| 🖥️ Test Windows 11            | `ping 10.0.0.4`                 | Successful replies from Win11 VM|
+| 💻 Test Windows 10            | `ping 10.0.0.3`                 | Successful replies from Win10 VM|
+| 📜 Test Windows 7             | `ping 10.0.0.5`                 | Successful replies from Win7 VM |
+| 🤖 Test Android VM            | `ping 10.0.0.6`                 | Successful replies from Android |
 
-### Example Results
+### 📡 Example
 
-```text
-IP Address:
-10.0.0.2/24
+![](6-Connectivity/Kali-To-Win10.png)
 
-Gateway:
-10.0.0.1
-
-DNS:
-8.8.8.8
-```
 
 ---
 
