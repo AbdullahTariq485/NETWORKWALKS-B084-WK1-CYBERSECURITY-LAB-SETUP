@@ -27,6 +27,22 @@ The purpose of the lab is to create a controlled environment where cybersecurity
 
 ---
 
+## 📑 Table of Contents
+
+- [Project Overview](#-project-overview)
+- [Objectives](#-objectives)
+- [Lab Architecture](#-lab-architecture)
+- [Lab Configuration](#-lab-configuration)
+- [Lab Setup Procedure](#-lab-setup-procedure)
+- [Other VMs and Target Machines](#-in-case-of-other-vms-or-target-machines)
+- [Lab Verification](#-lab-verification)
+- [Troubleshooting](#-problems-encountered--solutions)
+- [Key Learnings](#-what-i-learned)
+- [Security and Ethical Use](#-security--ethical-use)
+- [Tools and Resources](#-tools--resources)
+- [Author](#-author)
+
+---
 
 ## 🎯 Objectives
 
