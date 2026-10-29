@@ -73,14 +73,14 @@ Additional target machines can be added to the same virtual network in future pr
 
 ### 🔑 Lab Network Topology & Target Mapping
 
-| 🖥️ Environment Host | 📂 Folder Path | 🌐 Network Mode | 📡 Assigned IP Address | 🎯 Lab Profile |
-| :--- | :--- | :--- | :--- | :--- |
-| **Kali Linux** | `1-KaliVM/` | NAT Network | `10.0.0.2` | Attacker System |
-| **Windows 7** | `4-Win7VM/` | NAT Network | `10.0.0.5` | Legacy Target |
-| **Windows 10** | `2-Win10VM/` | NAT Network | `10.0.0.3` | Client Target |
-| **Windows 11** | `3-Win11VM/` | NAT Network | `10.0.0.4` | Client Target |
-| **Android-x86** | `5-AndroidVM/` | NAT Network | `10.0.0.6` | Mobile Target |
-| **Default Gateway** | *Infrastructure* | NAT Network | `10.0.0.1` | Virtual Router |
+| 🖥️ Environment Host | 🌐 Network Mode | 📡 Assigned IP Address | 🎯 Lab Profile |
+| :--- | :--- | :--- | :--- |
+| **Kali Linux** | NAT Network | `10.0.0.2` | Attacker System |
+| **Windows 7** |  NAT Network | `10.0.0.5` | Legacy Target |
+| **Windows 10** | NAT Network | `10.0.0.3` | Client Target |
+| **Windows 11** | NAT Network | `10.0.0.4` | Client Target |
+| **Android-x86**| NAT Network | `10.0.0.6` | Mobile Target |
+| **Default Gateway** | NAT Network | `10.0.0.1` | Virtual Router |
 
 > ℹ️ **Note:** Every target machine is strictly anchored to the private subnet gateway (`10.0.0.1`) and routes outbound external traffic safely using public DNS (`8.8.8.8`) while remaining entirely isolated from your physical host machine network.
 
