@@ -194,15 +194,16 @@ If a future exercise changes or damages the VM configuration, the machine can be
 
 ---
 
-## 📂 Target Machines
+## 📂 In Case of Other VMs or Target Machines
 
-> ℹ️ **Note:** Every virtual machine and network test in this lab environment is fully documented. You can navigate directly into each subfolder above to find the exact configuration snapshots, environment details, and execution logs.
+> ℹ️ **Note:** Every virtual machine and network test in this lab environment is fully documented. You can navigate directly into each subfolder above to find the exact configuration snapshots, environment details, and execution logs. **The same configuration and setup steps used for Kali Linux should also be followed for these VMs, as demonstrated through screenshots and documentation in their respective directories.**
 
 *   📁 **[2-Win10VM/](2-Win10VM/)** – Contains environment files, system properties screenshots, and security-hardening profiles for the Windows 10 enterprise target.
 *   📁 **[3-Win11VM/](3-Win11VM/)** – Contains VirtualBox resources and installation confirmation captures for the modern Windows 11 client target.
 *   📁 **[4-Win7VM/](4-Win7VM/)** – Contains legacy OS resource settings and deployment screenshots tracking the vulnerable Windows 7 lab node.
 *   📁 **[5-AndroidVM/](5-AndroidVM/)** – Contains setup documentation, architecture parameters, and interface verification images for the mobile emulation platform.
 *   📁 **[6-Connectivity/](6-Connectivity/)** – Contains actual proof-of-concept cross-VM ping walkthroughs, terminal outputs, and ICMP connectivity screenshots proving all machines talk to each other.
+
 
 ---
 
