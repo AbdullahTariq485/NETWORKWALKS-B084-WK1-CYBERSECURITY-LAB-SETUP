@@ -128,6 +128,7 @@ This will allow future attacker and target VMs to communicate within the lab.
 The Kali Linux virtual machine was downloaded from the official Kali Linux website and imported into VirtualBox.
 
 The VM network adapter was configured as follows:
+
 ![](1-KaliVM/Vbox-Kali-NetworkSettings.png)
 
 
@@ -136,9 +137,11 @@ The VM was allocated:
 ```text
 RAM: 1500 MB
 ```
-![](3-screenshot-kali-linux.png)
+![](1-KaliVM/KaliSpecs.png)
+
 A shared folder was also configured for transferring required files between the host operating system and the Kali VM.
 
+![](1-KaliVM/Kali-SharedFolders.png)
 
 
 ---
