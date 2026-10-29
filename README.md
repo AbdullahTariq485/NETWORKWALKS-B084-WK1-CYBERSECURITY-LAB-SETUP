@@ -77,25 +77,30 @@ It can be used for activities such as:
 
 ---
 
+
 ## 🏗️ Lab Architecture
 
-![](Vbox-Main.png)
+The laboratory uses Oracle VirtualBox to run Kali Linux as the
+security-testing machine alongside Windows and Android target VMs.
+All machines are configured to use the same NAT Network for
+internal connectivity and, where configured, outbound access.
 
+![VirtualBox Lab Architecture](Vbox-Main.png)
 
-Additional target machines can be added to the same virtual network in future projects.
+### 🔑 Virtual Machine and IP Mapping
 
-### 🔑 Lab Network Topology & Target Mapping
+| Virtual Machine | Role | IP Address |
+|---|---|---|
+| Kali Linux | Security Testing | `10.0.0.2` |
+| Windows 10 | Client Target | `10.0.0.3` |
+| Windows 11 | Client Target | `10.0.0.4` |
+| Windows 7 | Legacy Target | `10.0.0.5` |
+| Android-x86 | Mobile Target | `10.0.0.6` |
+| NAT Network Gateway | Default Gateway | `10.0.0.1` |
 
-| 🖥️ Environment Host | 🌐 Network Mode | 📡 Assigned IP Address | 🎯 Lab Profile |
-| :--- | :--- | :--- | :--- |
-| **Kali Linux** | NAT Network | `10.0.0.2` | Attacker System |
-| **Windows 7** |  NAT Network | `10.0.0.5` | Legacy Target |
-| **Windows 10** | NAT Network | `10.0.0.3` | Client Target |
-| **Windows 11** | NAT Network | `10.0.0.4` | Client Target |
-| **Android-x86**| NAT Network | `10.0.0.6` | Mobile Target |
-| **Default Gateway** | NAT Network | `10.0.0.1` | Virtual Router |
-
-> ℹ️ **Note:** Every target machine is strictly anchored to the private subnet gateway (`10.0.0.1`) and routes outbound external traffic safely using public DNS (`8.8.8.8`) while remaining entirely isolated from your physical host machine network.
+> **Note:** These are the intended addresses for the lab.
+> Verify actual assignments and gateway settings against the
+> VirtualBox configuration and guest operating systems.
 
 ---
 
