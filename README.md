@@ -161,7 +161,7 @@ DNS: 8.8.8.8
 
 A consistent IP address makes it easier to document the lab and reference the Kali machine in future exercises.
 
-![](4-screenshot-kali-network-settings.png)
+![](1-KaliVM/Kali-NetworkSettingsInternal.png)
 
 ---
 
@@ -174,6 +174,7 @@ Example snapshot name:
 ```text
 Clean Kali - Network Setup
 ```
+![](1-KaliVM/Kali-Snapshot.png)
 
 The snapshot represents the clean baseline of the laboratory.
 
