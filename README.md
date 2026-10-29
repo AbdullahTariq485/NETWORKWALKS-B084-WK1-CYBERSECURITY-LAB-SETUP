@@ -158,10 +158,10 @@ Subnet Mask: 255.255.255.0
 Gateway: 10.0.0.1
 DNS: 8.8.8.8
 ```
+![](1-KaliVM/Kali-NetworkSettingsInternal.png)
 
 A consistent IP address makes it easier to document the lab and reference the Kali machine in future exercises.
 
-![](1-KaliVM/Kali-NetworkSettingsInternal.png)
 
 ---
 
