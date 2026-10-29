@@ -96,21 +96,14 @@ Additional target machines can be added to the same virtual network in future pr
 
 # 🪜 Lab Setup Procedure
 
-## Step 1. Install 7-Zip
 
-7-Zip was installed to extract the Kali Linux virtual-machine package, which may be distributed as a `.7z` archive.
-
-**Tool:** 7-Zip
-
----
-
-## Step 2. Install VirtualBox
+## Step 1. Install VirtualBox
 
 VirtualBox was installed as the hypervisor.
 
 ---
 
-## Step 3. Create the NAT Network
+## Step 2. Create the NAT Network
 
 A dedicated NAT Network was created in VirtualBox.
 
@@ -129,7 +122,7 @@ This will allow future attacker and target VMs to communicate within the lab.
 
 ---
 
-## Step 4. Import Kali Linux
+## Step 3. Import Kali Linux
 
 The Kali Linux virtual machine was downloaded from the official Kali Linux website and imported into VirtualBox.
 
@@ -145,7 +138,7 @@ Adapter Type: Intel PRO/1000 MT Desktop
 The VM was allocated:
 
 ```text
-RAM: 2048 MB
+RAM: 1500 MB
 ```
 ![](3-screenshot-kali-linux.png)
 A shared folder was also configured for transferring required files between the host operating system and the Kali VM.
@@ -154,7 +147,7 @@ A shared folder was also configured for transferring required files between the 
 
 ---
 
-## Step 5. Configure the Kali Linux Network
+## Step 4. Configure the Kali Linux Network
 
 The Kali Linux network configuration was checked and configured with a consistent IPv4 address.
 
@@ -173,7 +166,7 @@ A consistent IP address makes it easier to document the lab and reference the Ka
 
 ---
 
-## Step 6. Create a Clean VM Snapshot
+## Step 5. Create a Clean VM Snapshot
 
 After completing the initial configuration, a VirtualBox snapshot was created.
 
