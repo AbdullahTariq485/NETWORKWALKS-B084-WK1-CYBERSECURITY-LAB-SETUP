@@ -71,7 +71,7 @@ It can be used for activities such as:
 ![](1-screenshot-title-image.png)
 
 
-Additional target machines can be added to the same virtual network in future projects.
+Additional target machines have been added to the same virtual network for future projects.
 
 ---
 
@@ -127,13 +127,8 @@ This will allow future attacker and target VMs to communicate within the lab.
 The Kali Linux virtual machine was downloaded from the official Kali Linux website and imported into VirtualBox.
 
 The VM network adapter was configured as follows:
+![](1-KaliVM/Vbox-KaliNetworkSettings.png)
 
-```text
-Adapter 1
-Attached to: NAT Network
-Network:     NatNetwork
-Adapter Type: Intel PRO/1000 MT Desktop
-```
 
 The VM was allocated:
 
