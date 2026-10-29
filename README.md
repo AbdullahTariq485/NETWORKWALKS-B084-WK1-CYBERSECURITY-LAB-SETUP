@@ -79,12 +79,12 @@ Additional target machines can be added to the same virtual network in future pr
 
 | 🧩 Component       | ⚙️ Configuration   |
 | ------------------ | ------------------  |
-| 🖥️ Host OS         | Windows 10         |
+| 🖥️ Host OS         | Windows 11         |
 | 🧠 Host RAM        | 8 GB               |
 | ⚡ Processor       | Intel Core i7      |
 | 🧰 Hypervisor      | VirtualBox 7.2  |
-| 🐉 Security OS     | Kali Linux 2026.2  |
-| 🧠 Kali RAM        | 2048 MB            |
+| 🐉 Security OS     | Kali Linux 2026.3  |
+| 🧠 Kali RAM        | 1500 MB            |
 | 🌐 Virtual Network | NAT Network        |
 | 📡 Network Address | 10.0.0.0/24        |
 | 🐧 Kali IP Address | 10.0.0.2/24        |
@@ -120,7 +120,7 @@ IPv4 Prefix:  10.0.0.0/24
 DHCP:         Enabled
 IPv6:         Disabled
 
-![](2-screenshot-network-settings-1.png)
+![](Vbox-NetworkSettings.png)
 
 A **NAT Network** was selected because multiple virtual machines connected to the same NAT Network can communicate with one another while also having outbound network connectivity.
 
