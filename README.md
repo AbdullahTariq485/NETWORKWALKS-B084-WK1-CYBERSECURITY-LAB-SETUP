@@ -35,7 +35,7 @@ The purpose of the lab is to create a controlled environment where cybersecurity
 - [🏗 Lab Architecture](#-lab-architecture)
 - [⚙ Lab Configuration](#-lab-configuration)
 - [🪜 Lab Setup Procedure](#-lab-setup-procedure)
-- [🧰 Advanced Lab Work: PM4-Wireshark](#-advanced-lab-work-pm4-wireshark)
+- [🧰 Lab Work: Wireshark](#-lab-work-wireshark)
 - [📂 In Case of Other VMs or Target Machines](#-in-case-of-other-vms-or-target-machines)
 - [🔎 Lab Verification](#-lab-verification)
 - [🐞 Problems Encountered & Solutions](#-problems-encountered--solutions)
@@ -256,7 +256,7 @@ in the `6-Connectivity/` directory.
 
 ---
 
-# 🧰 Advanced Lab Work: PM4-Wireshark
+# 🧰 Lab Work: Wireshark
 
 I used **Wireshark** to capture live network traffic and analyze packet captures (PCAPs) for security issues.
 
@@ -289,18 +289,6 @@ I used **Wireshark** to capture live network traffic and analyze packet captures
 
 ---
 
-### 🔍 Quick Reference Filters Used
-I used these basic Wireshark display filters to find the answers:
-
-| Filter | What it does |
-| :--- | :--- |
-| `ip.addr == 192.168.10.66` | Shows all traffic to or from this specific IP address. |
-| `tcp.flags.syn == 1` | Shows only packets with the SYN flag set (connection starts). |
-| `dns.qry.name == "microsoft.com"` | Filters traffic to show only DNS questions for this website. |
-| `tls.handshake.type == 2` | Shows Server Hello packets to check the active TLS version. |
-| `Analyze > Follow > TCP Stream` | Rebuilds the whole conversation into clear, readable text. |
-
----
 
 # 🐞 Problems Encountered & Solutions
 
