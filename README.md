@@ -286,8 +286,6 @@ I used **Wireshark** to capture live network traffic and analyze packet captures
 
 </details>
 
-Here is the complete modified Markdown for Labs 3–8. Everything remains unchanged except that Platform is now placed after Learning Outcome.
-
 ### Lab 3: Network Traffic Investigation
 
 - **Objective:** Investigate captured network traffic and identify important findings.
@@ -374,29 +372,80 @@ Here is the complete modified Markdown for Labs 3–8. Everything remains unchan
 
 ## 🔍 Wireshark Quick Reference
 
-| Filter | Description |
-|---|---|
-| `ip.addr == 192.168.1.10` | Filter traffic by IP address |
-| `tcp` / `udp` | Show TCP / UDP traffic |
-| `tcp.stream eq 0` | Filter a specific TCP stream |
-| `tcp.flags.syn == 1` | Find TCP SYN packets |
-| `http` | Show HTTP traffic |
-| `http.request` | Show HTTP requests |
-| `http.response` | Show HTTP responses |
-| `http.request.method == "GET"` | Find GET requests |
-| `http.request.method == "POST"` | Find POST requests |
-| `http.response.code == 200` | Find successful HTTP responses |
-| `http.response.code == 401` | Find unauthorized responses |
-| `http.host` | Identify HTTP hostnames |
-| `http.request.uri` | View requested URLs |
-| `dns` | Show DNS traffic |
-| `ftp` | Show FTP traffic |
-| `sip` | Show SIP signaling packets |
-| `rtp` | Show RTP voice packets |
-| `rtcp` | Show RTP control traffic |
-| `udp.port == 5060` | Filter common SIP traffic |
-| `tcp.analysis.retransmission` | Find TCP retransmissions |
-| `icmp` | Show ICMP traffic |
+<table>
+<tr>
+<th>Filter</th>
+<th>Description</th>
+<th>Filter</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><code>ip.addr == 192.168.1.10</code></td>
+<td>Filter by IP</td>
+<td><code>tcp</code> / <code>udp</code></td>
+<td>TCP / UDP traffic</td>
+</tr>
+<tr>
+<td><code>tcp.stream eq 0</code></td>
+<td>Specific TCP stream</td>
+<td><code>tcp.flags.syn == 1</code></td>
+<td>TCP SYN packets</td>
+</tr>
+<tr>
+<td><code>http</code></td>
+<td>HTTP traffic</td>
+<td><code>http.request</code></td>
+<td>HTTP requests</td>
+</tr>
+<tr>
+<td><code>http.response</code></td>
+<td>HTTP responses</td>
+<td><code>http.request.method == "GET"</code></td>
+<td>GET requests</td>
+</tr>
+<tr>
+<td><code>http.request.method == "POST"</code></td>
+<td>POST requests</td>
+<td><code>http.response.code == 200</code></td>
+<td>Successful responses</td>
+</tr>
+<tr>
+<td><code>http.response.code == 401</code></td>
+<td>Unauthorized responses</td>
+<td><code>http.host</code></td>
+<td>HTTP hostnames</td>
+</tr>
+<tr>
+<td><code>http.request.uri</code></td>
+<td>Requested URLs</td>
+<td><code>dns</code></td>
+<td>DNS traffic</td>
+</tr>
+<tr>
+<td><code>ftp</code></td>
+<td>FTP traffic</td>
+<td><code>sip</code></td>
+<td>SIP signaling</td>
+</tr>
+<tr>
+<td><code>rtp</code></td>
+<td>RTP voice packets</td>
+<td><code>rtcp</code></td>
+<td>RTP control traffic</td>
+</tr>
+<tr>
+<td><code>udp.port == 5060</code></td>
+<td>Common SIP port</td>
+<td><code>icmp</code></td>
+<td>ICMP traffic</td>
+</tr>
+<tr>
+<td><code>tcp.analysis.retransmission</code></td>
+<td>TCP retransmissions</td>
+<td><code>tcp.flags.reset == 1</code></td>
+<td>TCP reset packets</td>
+</tr>
+</table>
 
 ---
 
