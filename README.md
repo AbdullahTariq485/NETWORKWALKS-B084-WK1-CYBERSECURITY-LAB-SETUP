@@ -29,10 +29,9 @@ The purpose of the lab is to create a controlled environment where cybersecurity
 
 ## 📑 Table of Contents
 
-- [#-cybersecurity-lab-environment-setup](#-cybersecurity-lab-environment-setup)
 - [📌 Project Overview](#-project-overview)
 - [🎯 Objectives](#-objectives)
-- [🛡 Purpose of the Lab](#-purpose of the lab)
+- [🛡 Purpose of the Lab](#-purpose-of-the-lab)
 - [🏗 Lab Architecture](#-lab-architecture)
 - [⚙ Lab Configuration](#-lab-configuration)
 - [🪜 Lab Setup Procedure](#-lab-setup-procedure)
@@ -380,7 +379,7 @@ This laboratory is intended strictly for education purposes only.
 
 - **VirtualBox:** https://virtualbox.org
 - **Kali Linux:** https://kali.org
-- **Wireshark official installers:**[Wireshark Download Section](https://www.wireshark.org/download.html "wireshark download")
+- **Wireshark official installers:** https://www.wireshark.org/download.html
 
 ---
 
