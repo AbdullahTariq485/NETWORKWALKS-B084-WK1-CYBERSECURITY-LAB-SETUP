@@ -260,87 +260,107 @@ in the `6-Connectivity/` directory.
 
 I used **Wireshark** to capture live network traffic and analyze packet captures (PCAPs) for security issues. It was an extra module in this project. 
 
-### Lab 1: Live Packet Capture
-- **Activity:** Cleared laptop DNS cache (`ipconfig /flushdns`), started a live Wireshark capture on Wi-Fi, and went to `networkwalks.com`.
-- **Findings:** Filtered with `dns.qry.name == "networkwalks.com"` to verify my laptop IP, DNS server IP, and the website's IP. Used `tls.handshake.type == 1` to check the TLS Client Hello and Server Name.
+### Lab 1: Network Traffic Analysis
 
-### Lab 2: Offline PCAP Analysis
-- **Activity:** Opened `Wireshark_Lab2_Microsoft_DNS_v2.pcap` in Wireshark to practice offline analysis.
-- **Findings:** Filtered with `dns.qry.name == "microsoft.com"` to find the target web IPs. Used the packet details and bytes panes to confirm the traffic uses secure port `443` and runs on `TLSv1.3`.
+- **Objective:** Capture and examine network traffic using Wireshark.
+- **Activity:** Captured packets and explored their details to understand network communication.
+- **Learning Outcome:** Learned the basics of packet capturing and network traffic analysis.
 
-### Lab 3: SOC Analyst Port Scan Investigation
-- **Activity:** Used the online Networkwalks lab environment to act as a SOC Analyst and investigate an unusual traffic alert sent to a web server (`192.168.10.20`).
-- **Findings:** 
-  - Used filter `tcp.flags.syn == 1` and found one IP address (`192.168.10.66`) blasting connection packets to many different ports in a fraction of a second. This confirmed a **Port Scan**.
-  - Out of `309` total packets, `73` were SYN packets. The attacker scanned `40` unique ports from source port `52311`.
-  - Filtered with `ip.addr == 192.168.10.66` to see server replies. Found that ports `22`, `80`, and `443` are **open** (`[SYN, ACK]`), while the other `37` ports are **closed** (`[RST, ACK]`).
-  - #### 🏆 Lab Completion Proof
-![Wireshark SOC Lab-3](PM4-Wireshark/PM4.d-Wireshark-SOC-LAB-3.png)
+<details>
+<summary>📸 View Lab 1 Completion Proof</summary>
 
-  **You can check out the official lab here: [Networkwalks Online SOC Lab-3](https://networkwalks.com/wireshark-lab3/).**
+![Lab 1 Proof](./path-to-lab1/screenshot.png)
+
+</details>
+
+### Lab 2: Wireshark Packet Filtering
+
+- **Objective:** Learn how to filter and analyze specific network traffic.
+- **Activity:** Applied Wireshark display filters and examined different protocols and packets.
+- **Learning Outcome:** Learned how to find specific packets and understand their contents.
+
+<details>
+<summary>📸 View Lab 2 Completion Proof</summary>
+
+![Lab 2 Proof](./path-to-lab2/screenshot.png)
+
+</details>
+
+### Lab 3: Network Traffic Investigation
+
+- **Objective:** Investigate captured network traffic and identify important findings.
+- **Activity:** Analyzed packets, inspected network communication, and documented the results.
+- **Learning Outcome:** Gained practical experience in identifying and investigating network activity.
+
+<details>
+<summary>📸 View Lab 3 Completion Proof</summary>
+
+![Lab 3 Proof](./path-to-lab3/screenshot.png)
+
+</details>
 
 ### Lab 4: Follow TCP Stream
 
-- **Objective:** Investigate TCP communication by reconstructing application-layer conversations using Wireshark's Follow TCP Stream feature.
-- **Activity:** Captured network traffic, identified chat communication, examined stream details, and extracted information exchanged between communicating hosts.
-- **Key Learning:** Understanding TCP stream reconstruction and identifying potentially sensitive information within network conversations.
+- **Objective:** Understand TCP communication using Wireshark.
+- **Activity:** Captured network traffic and used Follow TCP Stream to view conversations between devices.
+- **Learning Outcome:** Learned how to follow TCP connections and inspect exchanged messages.
 
 <details>
 <summary>📸 View Lab 4 Completion Proof</summary>
 
-![Lab 4 Completion Proof](./path-to-lab4/screenshot.png)
+![Lab 4 Proof](./PM4.d-Wireshark-SOC-LAB-4/screenshot.png)
 
 </details>
 
 ### Lab 5: Follow TCP Stream – Part 2
 
-- **Objective:** Perform deeper TCP stream analysis to uncover hidden information exchanged over network connections.
-- **Activity:** Inspected HTTP communication, identified requested pages, followed relevant TCP streams, and examined transferred content to uncover concealed information.
-- **Key Learning:** Using TCP stream analysis to investigate web traffic, identify hidden content, and trace data transfers.
+- **Objective:** Explore TCP streams and find useful information in network traffic.
+- **Activity:** Inspected HTTP requests and examined data exchanged between hosts.
+- **Learning Outcome:** Learned how to inspect web traffic using TCP streams.
 
 <details>
 <summary>📸 View Lab 5 Completion Proof</summary>
 
-![Lab 5 Completion Proof](./path-to-lab5/screenshot.png)
+![Lab 5 Proof](./PM4.f-Wireshark-LAB-5/screenshot.png)
 
 </details>
 
 ### Lab 6: HTTP Plain Text Credentials
 
-- **Objective:** Understand the security risks of transmitting login credentials over unencrypted HTTP connections.
-- **Activity:** Captured and analyzed HTTP traffic, identified the login request, examined packet details, and located credentials transmitted in plain text.
-- **Key Learning:** Recognizing insecure authentication practices and understanding why HTTPS encryption is essential for protecting credentials.
+- **Objective:** Understand the risks of sending login details over unencrypted HTTP.
+- **Activity:** Captured HTTP traffic and identified credentials transmitted in plain text.
+- **Learning Outcome:** Understood why HTTPS is important for protecting login information.
 
 <details>
 <summary>📸 View Lab 6 Completion Proof</summary>
 
-![Lab 6 Completion Proof](./path-to-lab6/screenshot.png)
+![Lab 6 Proof](./PM4.g-Wireshark-LAB-6/screenshot.png)
 
 </details>
 
 ### Lab 7: Brute Force Catch
 
-- **Objective:** Detect and investigate brute-force login attempts through network traffic analysis.
-- **Activity:** Analyzed captured authentication traffic, identified the target and attacker, examined repeated failed login attempts, and identified the successful login and attack pattern.
-- **Key Learning:** Recognizing brute-force activity through authentication patterns, response codes, and suspicious login behavior.
+- **Objective:** Identify brute-force login attempts through network traffic.
+- **Activity:** Examined repeated login attempts and identified suspicious authentication activity.
+- **Learning Outcome:** Learned how to recognize brute-force attacks through packet analysis.
 
 <details>
 <summary>📸 View Lab 7 Completion Proof</summary>
 
-![Lab 7 Completion Proof](./path-to-lab7/screenshot.png)
+![Lab 7 Proof](./PM4.h-Wireshark-LAB-7/screenshot.png)
 
 </details>
 
 ### Lab 8: VoIP Analysis
 
-- **Objective:** Investigate Voice over IP (VoIP) traffic using Wireshark to understand how voice communication is transmitted over a network.
-- **Activity:** Captured and analyzed VoIP packets, identified SIP and RTP traffic, examined call signaling, and investigated the media streams involved in voice communication.
-- **Key Learning:** Understanding VoIP protocols, analyzing call signaling and RTP streams, and recognizing how Wireshark can be used to troubleshoot and investigate VoIP communications.
+- **Objective:** Understand how voice communication works over a network.
+- **Activity:** Captured and examined VoIP traffic to explore call-related packets.
+- **Learning Outcome:** Learned how to inspect VoIP communication using Wireshark.
 
 <details>
 <summary>📸 View Lab 8 Completion Proof</summary>
 
-![Lab 8 Completion Proof](./path-to-lab8/screenshot.png)
+![Lab 8 Proof](./path-to-lab8/screenshot.png)
 
 </details>
 
