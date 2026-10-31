@@ -364,15 +364,31 @@ I used **Wireshark** to capture live network traffic and analyze packet captures
 
 </details>
 
-### 🔍 Quick Reference Filters Used
+## 🔍 Wireshark Quick Reference
 
-| Filter | Purpose |
-| :--- | :--- |
-| `ip.addr == 192.168.10.66` | Shows all traffic to or from the attacker IP. |
-| `tcp.flags.syn == 1` | Isolates packets starting a TCP connection (SYN). |
-| `dns.qry.name == "microsoft.com"` | Shows only DNS questions for this website. |
-| `tls.handshake.type == 2` | Filters for Server Hello packets to check active TLS versions. |
-| `Analyze > Follow > TCP Stream` | Rebuilds the whole conversation into clear text. |
+| Filter | Description |
+|---|---|
+| `ip.addr == 192.168.1.10` | Filter traffic by IP address |
+| `tcp` / `udp` | Show TCP / UDP traffic |
+| `tcp.stream eq 0` | Filter a specific TCP stream |
+| `tcp.flags.syn == 1` | Find TCP SYN packets |
+| `http` | Show HTTP traffic |
+| `http.request` | Show HTTP requests |
+| `http.response` | Show HTTP responses |
+| `http.request.method == "GET"` | Find GET requests |
+| `http.request.method == "POST"` | Find POST requests |
+| `http.response.code == 200` | Find successful HTTP responses |
+| `http.response.code == 401` | Find unauthorized responses |
+| `http.host` | Identify HTTP hostnames |
+| `http.request.uri` | View requested URLs |
+| `dns` | Show DNS traffic |
+| `ftp` | Show FTP traffic |
+| `sip` | Show SIP signaling packets |
+| `rtp` | Show RTP voice packets |
+| `rtcp` | Show RTP control traffic |
+| `udp.port == 5060` | Filter common SIP traffic |
+| `tcp.analysis.retransmission` | Find TCP retransmissions |
+| `icmp` | Show ICMP traffic |
 
 ---
 
