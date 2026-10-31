@@ -29,18 +29,22 @@ The purpose of the lab is to create a controlled environment where cybersecurity
 
 ## 📑 Table of Contents
 
-- [Project Overview](#-project-overview)
-- [Objectives](#-objectives)
-- [Lab Architecture](#-lab-architecture)
-- [Lab Configuration](#-lab-configuration)
-- [Lab Setup Procedure](#-lab-setup-procedure)
-- [Other VMs and Target Machines](#-in-case-of-other-vms-or-target-machines)
-- [Lab Verification](#-lab-verification)
-- [Troubleshooting](#-problems-encountered--solutions)
-- [Key Learnings](#-what-i-learned)
-- [Security and Ethical Use](#-security--ethical-use)
-- [Tools and Resources](#-tools--resources)
-- [Author](#-author)
+- [#-cybersecurity-lab-environment-setup](#-cybersecurity-lab-environment-setup)
+- [📌 Project Overview](#-project-overview)
+- [🎯 Objectives](#-objectives)
+- [🛡 Purpose of the Lab](#-purpose of the lab)
+- [🏗 Lab Architecture](#-lab-architecture)
+- [⚙ Lab Configuration](#-lab-configuration)
+- [🪜 Lab Setup Procedure](#-lab-setup-procedure)
+- [🧰 Advanced Lab Work: PM4-Wireshark](#-advanced-lab-work-pm4-wireshark)
+- [📂 In Case of Other VMs or Target Machines](#-in-case-of-other-vms-or-target-machines)
+- [🔎 Lab Verification](#-lab-verification)
+- [🐞 Problems Encountered & Solutions](#-problems-encountered--solutions)
+- [💡 What I Learned](#-what-i-learned)
+- [🔐 Security & Ethical Use](#-security--ethical-use)
+- [🔗 Tools & Resources](#-tools--resources)
+- [👤 Author](#-author)
+
 
 ---
 
@@ -253,6 +257,42 @@ in the `6-Connectivity/` directory.
 
 ---
 
+# 🧰 Extra Lab Work: Wireshark
+
+I used Wireshark to capture real network traffic in the lab and analyze saved traffic logs to find network issues and security attacks.
+
+This work was done in three simple lab exercises:
+
+### Lab 1: Live Packet Capture
+- **What I did:** I cleared my laptop's DNS cache using `ipconfig /flushdns` so it would not remember websites. Then I opened Wireshark, started a live capture on my Wi-Fi card, and went to `networkwalks.com`.
+- **What I found:** I used the display filter `dns.qry.name == "networkwalks.com"` to find the query and response packets. I easily found my laptop's IP address, the DNS server IP, and the website's IP address. I also used the filter `tls.handshake.type == 1` to see the secure connection setup (Client Hello) and check the Server Name.
+
+### Lab 2: Offline PCAP Analysis
+- **What I did:** I opened a saved network traffic log file named `Wireshark_Lab2_Microsoft_DNS_v2.pcap` in Wireshark to practice offline analysis.
+- **What I found:** I used the filter `dns.qry.name == "microsoft.com"` and found that the DNS server returned multiple IP addresses for the website. By looking at the Protocol column and the three main panes in Wireshark, I found that the website uses port `443` for secure traffic and runs on version `TLSv1.3`.
+
+### Lab 3: SOC Analyst Port Scan Investigation
+- **What I did:** I acted as a SOC Analyst to investigate an unusual traffic alert sent to a company's web server (`192.168.10.20`).
+- **What I found:** 
+  - I used the filter `tcp.flags.syn == 1` and found that one single IP address (`192.168.10.66`) was sending a huge block of packets to many different ports in a fraction of a second. This confirmed the attack was a **Port Scan**.
+  - Out of `309` total packets, `73` were SYN packets. The attacker tried exactly `40` different ports from a single source port (`52311`).
+  - By checking the replies with the filter `ip.addr == 192.168.10.66`, I found that ports `22`, `80`, and `443` replied with `[SYN, ACK]`, meaning they are **open**. All other `37` ports replied with `[RST, ACK]`, meaning they are **closed**.
+
+---
+
+### 🔍 Quick Reference Filters Used
+I used these basic Wireshark display filters to find the answers:
+
+| Filter | What it does |
+| :--- | :--- |
+| `ip.addr == 192.168.10.66` | Shows all traffic to or from this specific IP address. |
+| `tcp.flags.syn == 1` | Shows only packets with the SYN flag set (connection starts). |
+| `dns.qry.name == "microsoft.com"` | Filters traffic to show only DNS questions for this website. |
+| `tls.handshake.type == 2` | Shows Server Hello packets to check the active TLS version. |
+| `Analyze > Follow > TCP Stream` | Rebuilds the whole conversation into clear, readable text. |
+
+---
+
 # 🐞 Problems Encountered & Solutions
 
 Documenting problems is an important part of the project.
@@ -324,6 +364,10 @@ This provides a known-good recovery point for future cybersecurity exercises.
 
 I learned that documenting commands, configuration, screenshots, problems, and solutions is an important part of a professional cybersecurity project.
 
+### 6. Packet Analysis with Wireshark
+- I learned how to look inside individual network packets to find IP addresses, ports, and protocols instead of just testing basic connections.
+- I learned how firewalls and servers reply differently to connection attempts when a port is open (`SYN, ACK`) versus when a port is closed (`RST, ACK`).
+
 ---
 
 # 🔐 Security & Ethical Use
@@ -334,8 +378,9 @@ This laboratory is intended strictly for education purposes only.
 
 # 🔗 Tools & Resources
 
-- **VirtualBox:** [https://virtualbox.org/wiki/Downloads](https://virtualbox.org/wiki/Downloads)
-- **Kali Linux:** [https://kali.org/get-kali](https://kali.org/get-kali)
+- **VirtualBox:** https://virtualbox.org
+- **Kali Linux:** https://kali.org
+- **Wireshark official installers:**[Wireshark Download Section](https://www.wireshark.org/download.html "wireshark download")
 
 ---
 
