@@ -256,26 +256,36 @@ in the `6-Connectivity/` directory.
 
 ---
 
-# 🧰 Extra Lab Work: Wireshark
+# 🧰 Advanced Lab Work: PM4-Wireshark
 
-I used Wireshark to capture real network traffic in the lab and analyze saved traffic logs to find network issues and security attacks.
-
-This work was done in three simple lab exercises:
+I used **Wireshark** to capture live network traffic and analyze packet captures (PCAPs) for security issues.
 
 ### Lab 1: Live Packet Capture
-- **What I did:** I cleared my laptop's DNS cache using `ipconfig /flushdns` so it would not remember websites. Then I opened Wireshark, started a live capture on my Wi-Fi card, and went to `networkwalks.com`.
-- **What I found:** I used the display filter `dns.qry.name == "networkwalks.com"` to find the query and response packets. I easily found my laptop's IP address, the DNS server IP, and the website's IP address. I also used the filter `tls.handshake.type == 1` to see the secure connection setup (Client Hello) and check the Server Name.
+- **Activity:** Cleared laptop DNS cache (`ipconfig /flushdns`), started a live Wireshark capture on Wi-Fi, and went to `networkwalks.com`.
+- **Findings:** Filtered with `dns.qry.name == "networkwalks.com"` to verify my laptop IP, DNS server IP, and the website's IP. Used `tls.handshake.type == 1` to check the TLS Client Hello and Server Name.
 
 ### Lab 2: Offline PCAP Analysis
-- **What I did:** I opened a saved network traffic log file named `Wireshark_Lab2_Microsoft_DNS_v2.pcap` in Wireshark to practice offline analysis.
-- **What I found:** I used the filter `dns.qry.name == "microsoft.com"` and found that the DNS server returned multiple IP addresses for the website. By looking at the Protocol column and the three main panes in Wireshark, I found that the website uses port `443` for secure traffic and runs on version `TLSv1.3`.
+- **Activity:** Opened `Wireshark_Lab2_Microsoft_DNS_v2.pcap` in Wireshark to practice offline analysis.
+- **Findings:** Filtered with `dns.qry.name == "microsoft.com"` to find the target web IPs. Used the packet details and bytes panes to confirm the traffic uses secure port `443` and runs on `TLSv1.3`.
 
 ### Lab 3: SOC Analyst Port Scan Investigation
-- **What I did:** I acted as a SOC Analyst to investigate an unusual traffic alert sent to a company's web server (`192.168.10.20`).
-- **What I found:** 
-  - I used the filter `tcp.flags.syn == 1` and found that one single IP address (`192.168.10.66`) was sending a huge block of packets to many different ports in a fraction of a second. This confirmed the attack was a **Port Scan**.
-  - Out of `309` total packets, `73` were SYN packets. The attacker tried exactly `40` different ports from a single source port (`52311`).
-  - By checking the replies with the filter `ip.addr == 192.168.10.66`, I found that ports `22`, `80`, and `443` replied with `[SYN, ACK]`, meaning they are **open**. All other `37` ports replied with `[RST, ACK]`, meaning they are **closed**.
+- **Activity:** Used the online Networkwalks lab environment to act as a SOC Analyst and investigate an unusual traffic alert sent to a web server (`192.168.10.20`).
+- **Findings:** 
+  - Used filter `tcp.flags.syn == 1` and found one IP address (`192.168.10.66`) blasting connection packets to many different ports in a fraction of a second. This confirmed a **Port Scan**.
+  - Out of `309` total packets, `73` were SYN packets. The attacker scanned `40` unique ports from source port `52311`.
+  - Filtered with `ip.addr == 192.168.10.66` to see server replies. Found that ports `22`, `80`, and `443` are **open** (`[SYN, ACK]`), while the other `37` ports are **closed** (`[RST, ACK]`).
+
+---
+
+### 🔍 Quick Reference Filters Used
+
+| Filter | Purpose |
+| :--- | :--- |
+| `ip.addr == 192.168.10.66` | Shows all traffic to or from the attacker IP. |
+| `tcp.flags.syn == 1` | Isolates packets starting a TCP connection (SYN). |
+| `dns.qry.name == "microsoft.com"` | Shows only DNS questions for this website. |
+| `tls.handshake.type == 2` | Filters for Server Hello packets to check active TLS versions. |
+| `Analyze > Follow > TCP Stream` | Rebuilds the whole conversation into clear text. |
 
 ---
 
@@ -380,6 +390,8 @@ This laboratory is intended strictly for education purposes only.
 - **VirtualBox:** https://virtualbox.org
 - **Kali Linux:** https://kali.org
 - **Wireshark official installers:** https://www.wireshark.org/download.html
+- **Online SOC Lab environment:** https://networkwalks.com/wireshark
+
 
 ---
 
