@@ -269,7 +269,7 @@ I used **Wireshark** to capture live network traffic and analyze packet captures
 <details>
 <summary>📸 View Lab 1 Completion Proof</summary>
 
-![Lab 1 Proof](./path-to-lab1/screenshot.png)
+![Lab 1 Proof](PM4-Wireshark/PM4.b-Wireshark-PacketCapture.png)
 
 </details>
 
@@ -282,7 +282,7 @@ I used **Wireshark** to capture live network traffic and analyze packet captures
 <details>
 <summary>📸 View Lab 2 Completion Proof</summary>
 
-![Lab 2 Proof](./path-to-lab2/screenshot.png)
+![Lab 2 Proof](PM4-Wireshark/PM4.c-Wireshark-PCAP-Analysis.png)
 
 </details>
 
@@ -295,7 +295,7 @@ I used **Wireshark** to capture live network traffic and analyze packet captures
 <details>
 <summary>📸 View Lab 3 Completion Proof</summary>
 
-![Lab 3 Proof](./path-to-lab3/screenshot.png)
+![Lab 3 Proof](PM4-Wireshark/PM4.d-Wireshark-SOC-LAB-3.png)
 
 </details>
 
@@ -308,7 +308,7 @@ I used **Wireshark** to capture live network traffic and analyze packet captures
 <details>
 <summary>📸 View Lab 4 Completion Proof</summary>
 
-![Lab 4 Proof](./PM4.d-Wireshark-SOC-LAB-4/screenshot.png)
+![Lab 4 Proof](PM4-Wireshark/PM4.e-Wireshark-SOC-LAB-4.png)
 
 </details>
 
@@ -321,7 +321,7 @@ I used **Wireshark** to capture live network traffic and analyze packet captures
 <details>
 <summary>📸 View Lab 5 Completion Proof</summary>
 
-![Lab 5 Proof](./PM4.f-Wireshark-LAB-5/screenshot.png)
+![Lab 5 Proof](PM4-Wireshark/PM4.f-Wireshark-LAB-5.png)
 
 </details>
 
@@ -334,7 +334,7 @@ I used **Wireshark** to capture live network traffic and analyze packet captures
 <details>
 <summary>📸 View Lab 6 Completion Proof</summary>
 
-![Lab 6 Proof](./PM4.g-Wireshark-LAB-6/screenshot.png)
+![Lab 6 Proof](PM4-Wireshark/PM4.g-Wireshark-LAB-6.png)
 
 </details>
 
@@ -347,7 +347,7 @@ I used **Wireshark** to capture live network traffic and analyze packet captures
 <details>
 <summary>📸 View Lab 7 Completion Proof</summary>
 
-![Lab 7 Proof](./PM4.h-Wireshark-LAB-7/screenshot.png)
+![Lab 7 Proof](PM4-Wireshark/PM4.h-Wireshark-LAB-7.png)
 
 </details>
 
@@ -360,7 +360,7 @@ I used **Wireshark** to capture live network traffic and analyze packet captures
 <details>
 <summary>📸 View Lab 8 Completion Proof</summary>
 
-![Lab 8 Proof](./path-to-lab8/screenshot.png)
+![Lab 8 Proof](PM4-Wireshark/PM4.i-Wireshark-LAB-8.png)
 
 </details>
 
