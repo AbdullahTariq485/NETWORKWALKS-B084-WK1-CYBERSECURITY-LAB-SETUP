@@ -286,11 +286,14 @@ I used **Wireshark** to capture live network traffic and analyze packet captures
 
 </details>
 
+Here is the complete modified Markdown for Labs 3–8. Everything remains unchanged except that Platform is now placed after Learning Outcome.
+
 ### Lab 3: Network Traffic Investigation
 
 - **Objective:** Investigate captured network traffic and identify important findings.
 - **Activity:** Analyzed packets, inspected network communication, and documented the results.
 - **Learning Outcome:** Gained practical experience in identifying and investigating network activity.
+- **Platform:** Completed online in the browser using [NetworkWalks – Lab 3: Identify the Attacker's IP](https://networkwalks.com/wireshark-lab3/).
 
 <details>
 <summary>📸 View Lab 3 Completion Proof</summary>
@@ -304,6 +307,7 @@ I used **Wireshark** to capture live network traffic and analyze packet captures
 - **Objective:** Understand TCP communication using Wireshark.
 - **Activity:** Captured network traffic and used Follow TCP Stream to view conversations between devices.
 - **Learning Outcome:** Learned how to follow TCP connections and inspect exchanged messages.
+- **Platform:** Completed online in the browser using [NetworkWalks – Lab 4: Follow TCP Stream](https://networkwalks.com/wireshark-lab4/).
 
 <details>
 <summary>📸 View Lab 4 Completion Proof</summary>
@@ -317,6 +321,7 @@ I used **Wireshark** to capture live network traffic and analyze packet captures
 - **Objective:** Explore TCP streams and find useful information in network traffic.
 - **Activity:** Inspected HTTP requests and examined data exchanged between hosts.
 - **Learning Outcome:** Learned how to inspect web traffic using TCP streams.
+- **Platform:** Completed online in the browser using [NetworkWalks – Lab 5: Follow TCP Stream, Part 2](https://networkwalks.com/wireshark-lab5/).
 
 <details>
 <summary>📸 View Lab 5 Completion Proof</summary>
@@ -330,6 +335,7 @@ I used **Wireshark** to capture live network traffic and analyze packet captures
 - **Objective:** Understand the risks of sending login details over unencrypted HTTP.
 - **Activity:** Captured HTTP traffic and identified credentials transmitted in plain text.
 - **Learning Outcome:** Understood why HTTPS is important for protecting login information.
+- **Platform:** Completed online in the browser using [NetworkWalks – Lab 6: HTTP Plain Text Credentials](https://networkwalks.com/wireshark-lab6/).
 
 <details>
 <summary>📸 View Lab 6 Completion Proof</summary>
@@ -343,6 +349,7 @@ I used **Wireshark** to capture live network traffic and analyze packet captures
 - **Objective:** Identify brute-force login attempts through network traffic.
 - **Activity:** Examined repeated login attempts and identified suspicious authentication activity.
 - **Learning Outcome:** Learned how to recognize brute-force attacks through packet analysis.
+- **Platform:** Completed online in the browser using [NetworkWalks – Lab 7: Brute Force Catch](https://networkwalks.com/wireshark-lab7/).
 
 <details>
 <summary>📸 View Lab 7 Completion Proof</summary>
@@ -356,6 +363,7 @@ I used **Wireshark** to capture live network traffic and analyze packet captures
 - **Objective:** Understand how voice communication works over a network.
 - **Activity:** Captured and examined VoIP traffic to explore call-related packets.
 - **Learning Outcome:** Learned how to inspect VoIP communication using Wireshark.
+- **Platform:** Completed online in the browser using [NetworkWalks – Lab 8: VoIP Call Replay](https://networkwalks.com/wireshark-lab8/).
 
 <details>
 <summary>📸 View Lab 8 Completion Proof</summary>
