@@ -62,7 +62,7 @@ The main objectives of this project are to:
 
 ---
 
-## 🛡️ Purpose of the Lab
+# 🛡 Purpose of the Lab
 
 The lab provides an isolated and controlled environment for cybersecurity learning and authorized security testing.
 
@@ -81,7 +81,7 @@ It can be used for activities such as:
 ---
 
 
-## 🏗️ Lab Architecture
+# 🏗 Lab Architecture
 
 The laboratory uses Oracle VirtualBox to run Kali Linux as the
 security-testing machine alongside Windows and Android target VMs.
@@ -107,7 +107,7 @@ internal connectivity and, where configured, outbound access.
 
 ---
 
-## ⚙️ Lab Configuration
+# ⚙ Lab Configuration
 
 | 🧩 Component       | ⚙️ Configuration   |
 | ------------------ | ------------------  |
