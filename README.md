@@ -275,7 +275,7 @@ I used **Wireshark** to capture live network traffic and analyze packet captures
   - Out of `309` total packets, `73` were SYN packets. The attacker scanned `40` unique ports from source port `52311`.
   - Filtered with `ip.addr == 192.168.10.66` to see server replies. Found that ports `22`, `80`, and `443` are **open** (`[SYN, ACK]`), while the other `37` ports are **closed** (`[RST, ACK]`).
   - #### 🏆 Lab Completion Proof
-![Wireshark SOC Lab-3](PM4-Wireshark/Pm4.d-Wireshark-SOC-LAB.png)
+![Wireshark SOC Lab-3](PM4-Wireshark/PM4.d-Wireshark-SOC-LAB.png)
 
   **You can check out the official lab here: [Networkwalks Online SOC Lab-3](https://networkwalks.com/wireshark-lab3/).**
 
