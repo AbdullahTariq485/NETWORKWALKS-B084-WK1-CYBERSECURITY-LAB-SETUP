@@ -258,7 +258,7 @@ in the `6-Connectivity/` directory.
 
 # 🧰 Lab Work: Wireshark
 
-I used **Wireshark** to capture live network traffic and analyze packet captures (PCAPs) for security issues.
+I used **Wireshark** to capture live network traffic and analyze packet captures (PCAPs) for security issues. It was an extra module in this project. 
 
 ### Lab 1: Live Packet Capture
 - **Activity:** Cleared laptop DNS cache (`ipconfig /flushdns`), started a live Wireshark capture on Wi-Fi, and went to `networkwalks.com`.
